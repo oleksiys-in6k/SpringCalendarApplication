@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- INPUT -->
+    <bean id="todayInput" class="com.springReader.TodayInput" />
+    <bean id="consoleInput" class="com.springReader.ConsoleInput" />
+    <bean id="configFileInput" class="com.springReader.ConfigFileInput" />
+
+    <!-- OUTPUT -->
+    <bean id="consoleOut" class="com.render.ConsoleCalendarRender"/>
+    <bean id="htmlOut" class="com.render.HTMLCalendarRender"/>
+
+    <bean id="CalendarApplication" class="com.run.CalendarApplication">
+        <property name="reader" ref="todayInput" />
+        <property name="calendarRender" ref="consoleOut"/>
+    </bean>
+
+</beans>
