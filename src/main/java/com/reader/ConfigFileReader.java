@@ -1,20 +1,30 @@
-package com.creatingCalendar;
+package com.reader;
+
+import com.fillMonthCalendar.MonthCalendar;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
+public class ConfigFileReader implements CalendarReader {
 
-public class InputConfigReader {
+    @Override
+    public List<MonthCalendar> getMonths() throws FileNotFoundException {
 
-    public List<Year> getMonthsFromConfig() throws FileNotFoundException {
-        List<Year> result = new LinkedList<Year>();
+//        InputConfigReader config = new InputConfigReader();
+        List<MonthCalendar> years = getMonthsFromConfig();
+
+        System.out.println(years);
+
+        return years;
+
+    }
+
+    public List<MonthCalendar> getMonthsFromConfig() throws FileNotFoundException {
+        List<MonthCalendar> result = new ArrayList<>();
 
         Scanner in = new Scanner(new File("config.txt"));
-//
-//
+
 //        while (in.hasNextLine()) {
 //            Calendar calendar = Calendar.getInstance();
 //            int year = 0;
@@ -30,11 +40,8 @@ public class InputConfigReader {
 //            }
 //
 //            Collections.sort(result);
-
-
-
 //        }
-        return result;
 
+        return null;
     }
 }

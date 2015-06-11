@@ -1,8 +1,8 @@
-package com.render;
+package com.writer;
 
 import com.fillMonthCalendar.WeekDayType;
 
-public class HTMLCalendarRender extends AbstractMonthCalendarRenderer {
+public class HTMLCalendarWriter extends AbstractMonthCalendarRenderer {
 
 
     public static final String MONTH_OPEN = "<cmdln>\n<head>\n</head>\n<body>\n<table border=1>";

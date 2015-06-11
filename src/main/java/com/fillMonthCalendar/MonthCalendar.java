@@ -23,6 +23,9 @@ public class MonthCalendar {
         } while (week.isCurrentMonth() && !week.isLastDayOfMonth());
     }
 
+    public MonthCalendar() {
+    }
+
     public List<Week> getWeeks() {
         return weeks;
     }

@@ -1,10 +1,10 @@
 package com.run;
 
-import com.creatingCalendar.InputConfigReader;
 import com.creatingCalendar.MonthCalendarFile;
 import com.creatingCalendar.Year;
 import com.fillMonthCalendar.MonthCalendar;
-import com.render.CalendarRender;
+import com.reader.CalendarReader;
+import com.writer.CalendarWriter;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -12,25 +12,25 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class CalendarApplication {
-    private CalendarRender calendarRender;
-    private IMonthReader reader;
-//    TodayInput now;
-//    ConfigFileInput configFile;
+
+    private CalendarWriter calendarWriter;
+    private CalendarReader reader;
+
 
     public void execute() throws FileNotFoundException {
 
         List <MonthCalendar> monthCalendars = reader.getMonths();
         //System.out.println(monthCalendars.get(0));
         for (MonthCalendar month : monthCalendars)
-            System.out.println(calendarRender.render(month));
+            System.out.println(calendarWriter.render(month));
     }
 
-    public void setReader(IMonthReader reader) {
+    public void setReader(CalendarReader reader) {
         this.reader = reader;
     }
 
-    public void setCalendarRender(CalendarRender calendarRender) {
-        this.calendarRender = calendarRender;
+    public void setCalendarWriter(CalendarWriter calendarWriter) {
+        this.calendarWriter = calendarWriter;
     }
 
     public List<MonthCalendarFile> creatingListOfAllMonths() throws FileNotFoundException {

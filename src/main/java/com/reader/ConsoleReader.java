@@ -1,14 +1,13 @@
-package com.springReader;
+package com.reader;
 
 import com.fillMonthCalendar.MonthCalendar;
-import com.run.IMonthReader;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
 
-public class ConsoleInput implements IMonthReader {
+public class ConsoleReader implements CalendarReader {
     @Override
     public List<MonthCalendar> getMonths() {
 
@@ -17,7 +16,6 @@ public class ConsoleInput implements IMonthReader {
         int year = Integer.parseInt(scanner.next());
         System.out.println("Enter month");
         int month = Integer.parseInt(scanner.next());
-
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.DAY_OF_MONTH, 1);

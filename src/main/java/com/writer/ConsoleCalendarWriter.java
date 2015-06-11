@@ -1,8 +1,8 @@
-package com.render;
+package com.writer;
 
 import com.fillMonthCalendar.WeekDayType;
 
-public class ConsoleCalendarRender extends AbstractMonthCalendarRenderer {
+public class ConsoleCalendarWriter extends AbstractMonthCalendarRenderer {
 
     private static final String RED = "\u001B[31m";
     private static final String BLACK = "\u001B[0m";

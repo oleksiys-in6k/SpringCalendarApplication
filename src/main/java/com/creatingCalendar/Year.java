@@ -1,5 +1,7 @@
 package com.creatingCalendar;
 
+import com.fillMonthCalendar.MonthCalendar;
+
 import java.util.Calendar;
 import java.util.*;
 
@@ -7,7 +9,7 @@ public class Year implements Comparable {
 
     public static final int COUNT_OF_MONTH = 12;
     int year;
-    List<MonthCalendarFile> months = new LinkedList<MonthCalendarFile>();
+    List<MonthCalendar> months = new LinkedList<MonthCalendar>();
 
     public Year(int year, LinkedList<String> sMonths) {
         this.year = year;
@@ -25,16 +27,15 @@ public class Year implements Comparable {
 
     private void sortingMonths(LinkedList<String> sMonths) {
         List <Integer> listOfMonthsIndex = new LinkedList();
-        for ( int  i= 0 ; i < sMonths.size(); i++)
-            listOfMonthsIndex.add(new SwitchesOfMonth().getMonthIndexByName(sMonths.get(i)));
+        for (String sMonth : sMonths)
+            listOfMonthsIndex.add(new SwitchesOfMonth().getMonthIndexByName(sMonth));
 
         Collections.sort(listOfMonthsIndex);
         sMonths.clear();
 
-        for (int i = 0;  i < listOfMonthsIndex.size(); i++) {
-            String currMonth = new SwitchesOfMonth().getMonthNameByIndex(listOfMonthsIndex.get(i));
+        for (Integer aListOfMonthsIndex : listOfMonthsIndex) {
+            String currMonth = new SwitchesOfMonth().getMonthNameByIndex(aListOfMonthsIndex);
             sMonths.add(currMonth);
-
         }
     }
 
@@ -60,7 +61,7 @@ public class Year implements Comparable {
         }
     }
 
-    public List<MonthCalendarFile> getMonths() {
+    public List<MonthCalendar> getMonths() {
         return months;
     }
 

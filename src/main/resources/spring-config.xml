@@ -4,17 +4,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- INPUT -->
-    <bean id="todayInput" class="com.springReader.TodayInput" />
-    <bean id="consoleInput" class="com.springReader.ConsoleInput" />
-    <bean id="configFileInput" class="com.springReader.ConfigFileInput" />
+    <bean id="todayInput" class="com.reader.TodayReader" />
+    <bean id="consoleInput" class="com.reader.ConsoleReader" />
+    <bean id="configFileInput" class="com.reader.ConfigFileReader" />
 
     <!-- OUTPUT -->
-    <bean id="consoleOut" class="com.render.ConsoleCalendarRender"/>
-    <bean id="htmlOut" class="com.render.HTMLCalendarRender"/>
+    <bean id="consoleOut" class="com.writer.ConsoleCalendarWriter"/>
+    <bean id="htmlOut" class="com.writer.HTMLCalendarWriter"/>
 
     <bean id="CalendarApplication" class="com.run.CalendarApplication">
         <property name="reader" ref="todayInput" />
-        <property name="calendarRender" ref="consoleOut"/>
+        <property name="calendarWriter" ref="htmlOut"/>
     </bean>
 
 </beans>

@@ -1,9 +1,9 @@
 package com.creatingCalendar;
 
 import com.fillMonthCalendar.MonthCalendar;
-import com.render.ConsoleCalendarRender;
-import com.render.HTMLCalendarRender;
-import com.render.CalendarRender;
+import com.writer.ConsoleCalendarWriter;
+import com.writer.HTMLCalendarWriter;
+import com.writer.CalendarWriter;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,8 +11,8 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class MonthCalendarFile {
-    public static CalendarRender calendarRender;
+public class MonthCalendarFile extends MonthCalendar {
+    public static CalendarWriter calendarWriter;
 
     public static final String OUTPUT_DIR = "output";
     private static final String HTMLEXTENSION = ".html";
@@ -64,16 +64,16 @@ public class MonthCalendarFile {
             writer.println(next.getLink());
         }
 
-        calendarRender = new HTMLCalendarRender();
+        calendarWriter = new HTMLCalendarWriter();
         writer.println("<h1>" + getMonthTitle() + "</h1>");
-        writer.println(calendarRender.render(monthCalendar));
+        writer.println(calendarWriter.render(monthCalendar));
         writer.close();
     }
 
     public void writeToConsole (MonthCalendarFile previous, MonthCalendarFile next) {
-        calendarRender = new ConsoleCalendarRender();
+        calendarWriter = new ConsoleCalendarWriter();
         System.out.println(getMonthTitle() );
-        System.out.println(calendarRender.render(monthCalendar));
+        System.out.println(calendarWriter.render(monthCalendar));
 
     }
 

@@ -1,7 +1,7 @@
-package com.render;
+package com.writer;
 
 import com.fillMonthCalendar.MonthCalendar;
 
-public interface CalendarRender {
+public interface CalendarWriter {
     String render(MonthCalendar monthCalendar);
 }

@@ -1,4 +1,4 @@
-package com.render;
+package com.writer;
 
 
 import com.fillMonthCalendar.MonthCalendar;
@@ -6,7 +6,7 @@ import com.fillMonthCalendar.Week;
 import com.fillMonthCalendar.WeekDay;
 import com.fillMonthCalendar.WeekDayType;
 
-public abstract class AbstractMonthCalendarRenderer implements CalendarRender {
+public abstract class AbstractMonthCalendarRenderer implements CalendarWriter {
 
 
     public String render(MonthCalendar monthCalendar) {
